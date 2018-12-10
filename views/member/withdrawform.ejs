@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <h1><%= title %></h1>
+        <form action="/members/withdraw/<%=id%>" method="post" class="form-inline">
+          <input type="hidden" name="id" value="<%=id%>" class="form-control"/>
+          비밀번호 : <input type="password" name="passwd" size="12" maxlength="12" class="form-control"/>
+          <input type="submit" value="탈퇴" class="btn btn-primary"/>
+          <input type="reset" value="취소" class="btn btn-danger" onclick="history.back();"/>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
